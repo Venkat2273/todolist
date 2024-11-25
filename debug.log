@@ -1,0 +1,2 @@
+[3904:13448:0718/091146.568:VERBOSE1:installer.cc(386)] "C:\Users\Venkat Ramana\Downloads\ChromeSetup.exe" --install=appguid={8A69D345-D564-463C-AFF1-A69D9E530F96}&iid={D6EFD985-0624-9DCC-C75C-29D4DBBCB1A1}&lang=en-GB&browser=5&usagestats=1&appname=Google%20Chrome&needsadmin=prefers&ap=x64-statsdef_1&installdataindex=empty --enable-logging --vmodule=*/components/winhttp/*=1,*/components/update_client/*=2,*/chrome/updater/*=2
+[3904:13448:0718/091655.208:VERBOSE1:installer.cc(491)] Metainstaller WMain returned: 0, Windows error: 0

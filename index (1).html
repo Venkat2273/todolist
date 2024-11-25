@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Task Manager Application">
+    <title>TODO LIST App</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body> 
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="dd.jpg" alt="Profile Avatar" class="avatar">
+                <h1 class="app-title">TODO list App</h1>
+                <span class="username">Venkat Ramana</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#" class="nav-link active" data-view="all">
+                    <i class="fas fa-tasks icon"></i>
+                    All Tasks
+                </a>
+                <a href="#" class="nav-link" data-view="personal">
+                    <i class="fas fa-user icon"></i>
+                    Personal
+                </a>
+                <a href="#" class="nav-link" data-view="work">
+                    <i class="fas fa-briefcase icon"></i>
+                    Work
+                </a>
+                <a href="#" class="nav-link" data-view="freelance">
+                    <i class="fas fa-laptop icon"></i>
+                    Freelance
+                </a>
+                <a href="#" class="nav-link" data-view="Scheduled task">
+                    <i class="fas fa-laptop icon"></i>
+                    Scheduled task
+                </a>
+                <a href="#" class="nav-link" data-view="settings">
+                    <i class="fas fa-cog icon"></i>
+                    Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Tasks View -->
+                <div id="tasks-view" class="view">
+                    <h1 class="main-title">My Tasks</h1>
+                    <h2 class="subtitle">Today's Focus</h2>
+                    
+                    <div class="task-counter">
+                        <span class="count">4</span> tasks remaining
+                    </div>
+                    
+                    <div class="task-input-container">
+                        <input 
+                            type="text" 
+                            id="new-task" 
+                            class="task-input"
+                            placeholder="Add a new task..."
+                            autocomplete="off"
+                            maxlength="100"
+                        >
+                        <div class="task-actions">
+                            <select id="task-category" class="task-category-select">
+                                <option value="personal">Personal</option>
+                                <option value="work">Work</option>
+                                <option value="freelance">Freelance</option>
+                            </select>
+                            <button class="add-button">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="task-list" class="task-list"></div>
+                </div>
+
+                <!-- Settings View -->
+                <div id="settings-view" class="view hidden">
+                    <h1 class="main-title">Settings</h1>
+                    <div class="settings-container">
+                        <!-- Profile Section -->
+                        <div class="settings-section">
+                            <div class="section-header">
+                                <i class="fas fa-user"></i>
+                                <h2>Profile Settings</h2>
+                            </div>
+                            <button class="settings-button">
+                                <span>Edit Profile</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="settings-button">
+                                <span>Change Password</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="settings-button">
+                                <span>Privacy Settings</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Notifications Section -->
+                        <div class="settings-section">
+                            <div class="section-header">
+                                <i class="fas fa-bell"></i>
+                                <h2>Notifications</h2>
+                            </div>
+                            <div class="settings-toggle">
+                                <span>Enable Notifications</span>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="settings-toggle">
+                                <span>Task Reminders</span>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="settings-toggle">
+                                <span>Email Notifications</span>
+                                <label class="toggle">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Preferences Section -->
+                        <div class="settings-section">
+                            <div class="section-header">
+                                <i class="fas fa-globe"></i>
+                                <h2>Preferences</h2>
+                            </div>
+                            <button class="settings-button">
+                                <span>Language</span>
+                                <div class="button-right">
+                                    <span class="setting-value">English</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </button>
+                            <button class="settings-button">
+                                <span>Time Zone</span>
+                                <div class="button-right">
+                                    <span class="setting-value">UTC-5</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </button>
+                            <button class="settings-button">
+                                <span>Theme</span>
+                                <div class="button-right">
+                                    <span class="setting-value">Light</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- About Section -->
+                        <div class="settings-section">
+                            <div class="section-header">
+                                <i class="fas fa-info-circle"></i>
+                                <h2>About</h2>
+                            </div>
+                            <button class="settings-button">
+                                <span>Version</span>
+                                <span class="setting-value">1.0.0</span>
+                            </button>
+                            <button class="settings-button">
+                                <span>Terms of Service</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="settings-button">
+                                <span>Privacy Policy</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
